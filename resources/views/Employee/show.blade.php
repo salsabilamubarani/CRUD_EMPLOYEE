@@ -1,11 +1,12 @@
-ini halaman show
+@extends('layouts.sb-admin')
+@section('content')
 
 @foreach ($Employee as $Employeelist)
-<p style="color: black">{{$Employeelist->employee_id}}</p>
-<p style="color: blue">{{$Employeelist->employee_name}}</p>
-<p style="color: green">{{$Employeelist->employee_address}}</p>
-<p style="color: green">{{$Employeelist->employee_phone_numberphone}}</p>
-<a href="/Employee/{{$Employeelist->employee_id}}">show</a>
-<br />
+<p>{{$Employeelist->employee_id}}</p>
+<p>{{$Employeelist->employee_name}}</p>
+<p>{{$Employeelist->employee_address}}</p>
+<p>{{$Employeelist->employee_phone_number}}</p>
 @endforeach
-<a href="{{url('Employee/create')}}">pencet saya donk</a>
+<a class = "btn btn-info" href="{{ url('Employee')}}">BACK TO DATA</a>
+
+@endsection
